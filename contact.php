@@ -1,3 +1,7 @@
+<?php
+  include('connection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -105,7 +109,7 @@
           </div>
           <div class="col-md-12">
     
-            <form action="#" method="post">
+            <form action="contact.php" method="post">
     
               <div class="p-3 p-lg-5 border">
                 <div class="form-group row">

@@ -137,7 +137,12 @@ a {
   font-weight: 900; }
   .site-logo a:hover {
     text-decoration: none; }
-
+  .site-logo{
+    margin-left: 8%;
+  }
+  .icons{
+    margin-right: 2%;
+  }
 .icons-btn {
   display: inline-block;
   text-align: center; }
@@ -249,7 +254,7 @@ a {
       display: inline-block; }
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block;
-      padding: 10px 5px; }
+      padding: 10px 0; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 10px 10px;
         font-family: Georgia, 'Times New Roman', Times, serif;
