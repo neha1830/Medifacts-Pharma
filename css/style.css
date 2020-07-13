@@ -53,7 +53,8 @@ a {
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
   text-transform: uppercase;
-  border-width: 2px; }
+  border-width: 2px; 
+  }
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none;
@@ -61,12 +62,13 @@ a {
    }
   .btn.btn-primary:hover {
     background: transparent;
-    color: #51eaea; }
+  color: black!important;
+  font-weight: bold;}
   .btn.btn-black {
     background: #000;
     color: #fff; }
     .btn.btn-black:hover, .btn.btn-black:active, .btn.btn-black:focus {
-      background-color: #51eaea;
+      background-color: #0571BD;
       color: #000; }
 
 .form-control {
@@ -169,14 +171,14 @@ a {
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
-  position: relative;
+  position: fixed;
   top: 0;
   width: 100%;
   background: #fff;
   box-shadow: 0px 10px 5px #27272780;
   -webkit-box-shadow: 0px 10px 5px #27272780;
   -moz-box-shadow: 0px 10px 5px #27272780;
-  position: relative;
+  position: fixed;
   z-index: 999999; }
   .site-navbar.position-relative {
     position: relative;
@@ -309,7 +311,7 @@ a {
           -o-transition: 0s all;
           transition: 0s all; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown .active > a {
-          color: #0571BD; !important; }
+          color: #0571BD !important; }
         .site-navbar .site-navigation .site-menu .has-children .dropdown > li {
           list-style: none;
           padding: 0;
@@ -1046,23 +1048,115 @@ a {
 
 .banner-wrap {
   background: #74d12b;
-  border-radius: 4px; }
-  .banner-wrap a {
-    padding: 30px;
+  border-radius: 4px;}
+  .banner-wrap .front{
+    position: relative;
+    background-color: #000;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 1s;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px rgba(0,0,0,0.8);
+  }
+  .banner-wrap:hover .front{
+    transform: rotateX(-180deg);
+  }
+  .banner-wrap .back{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 92%;
+    height: 100%;
+    background-color: #000;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 1s;
+    box-sizing: border-box;
+    box-shadow: 0px 20px 50px rgba(0,0,0,0.8);
+  }
+  
+  .banner-wrap .back:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(255,255,255,0.1);
+  }
+  .banner-wrap:hover .back{
+    transform: rotateX(0deg);
+  }
+  .banner-wrap .front .content{
+    background-color: #000;
+    color: white;
+    text-align: center;
+  }
+  
+  /* .banner-wrap .back .details{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 40px;
+  }
+  
+  .banner-wrap .back .details p{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: white;
+  } */
+  
+  .social-icons{
+    margin-top: 30%;
+    padding-left:  20%;
+    
+  }
+  
+  .social-icons a{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    background-color: #262626;
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  
+  .social-icons a .fa{
+    line-height: 36px;
+  }
+  
+  .social-icons a:hover {
+      background-color: #0571BD;
+  }
+  
+  .shop_btn_2{
+    border: 3px double white;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    background-color:#0571BD;
+    text-align: center;
+    cursor: pointer;
     display: block;
-    text-align: center; }
-    .banner-wrap a h5 {
-      font-size: 2rem;
-      font-style: italic;
-      margin-bottom: 10px; }
-    .banner-wrap a h5, .banner-wrap a p {
-      color: #fff; }
-    .banner-wrap a p {
-      color: #fff;
-      font-size: 1.4rem; }
-      .banner-wrap a p strong {
-        font-size: .9rem;
-        display: block; }
+    margin-top: 10%;
+    margin-left: 25%;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+  
+  .shop_btn_2:hover { 
+    transform: scale(1.2)
+  }
+  
 
 .banner-1 {
   background-size: cover;
